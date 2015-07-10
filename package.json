@@ -1,0 +1,31 @@
+{
+  "name": "bitmap_transformer",
+  "version": "0.1.0",
+  "description": "Bitmap Transformer reads in a file, performs transform, saves a new file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickuhn/bitmap_transformer.git"
+  },
+  "keywords": [
+    "bitmap",
+    "transformer"
+  ],
+  "author": "Nick Kuhn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickuhn/bitmap_transformer/issues"
+  },
+  "homepage": "https://github.com/nickuhn/bitmap_transformer#readme",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-mocha": "^2.1.2",
+    "jshint-stylish": "^2.0.1",
+    "mocha": "^2.2.5"
+  }
+}
