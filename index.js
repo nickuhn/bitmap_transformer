@@ -2,7 +2,6 @@ var transform = require('./lib/transform');
 var bufferReader = require('./lib/bufferReader');
 var fs = require('fs');
 
+bufferReader(process.argv[2], process.argv[3]);
 
-bufferReader('/../bitmaps/nonpalettebitmap.bmp', 'b');
-
-//todo add in check for BE versus LE, add in command line interface, rewrite/add tests
+// bufferReader('/../bitmaps/nonpalettebitmap.bmp', 'b');
