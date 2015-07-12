@@ -13,14 +13,17 @@ describe('transform', function(){
   });
   it('should blue scale the sequence when passed a b flag', function(){
     var color = [0, 100, 0, 0];
-    expect(transform.b(color[1], 1)).to.deep.equal(255);
+    expect(transform.b(color[1], 0)).to.deep.equal(255);
   });
   it('should green scale the sequence when passed a g flag', function(){
     var color = [0, 0, 100, 0];
-    expect(transform.g(color[2], 2)).to.deep.equal(255);
+    expect(transform.g(color[2], 1)).to.deep.equal(255);
   });
   it('should red scale the sequence when passed a r flag', function(){
     var color = [0, 0, 0, 100];
-    expect(transform.r(color[3], 3)).to.deep.equal(255);
+    expect(transform.r(color[3], 2)).to.deep.equal(255);
+  });
+  it('should randomize the value when passed a rd flag', function(){
+    expect(transform.rd(0, 0)).to.be.below(256);
   });
 });
