@@ -1,8 +1,9 @@
-var gulp = require('gulp');
-var mocha = require('gulp-mocha');
+var gulp   = require('gulp');
+var mocha  = require('gulp-mocha');
 var jshint = require('gulp-jshint');
+var jscs   = require('gulp-jscs');
 
-gulp.task(('default'), ['test', 'lint', 'watch'], function() {});
+gulp.task(('default'), ['test', 'lint', 'style', 'watch'], function() {});
 
 gulp.task('test', function(){
   return gulp.src('test/*.js')
@@ -15,6 +16,11 @@ gulp.task('lint', function(){
              .pipe(jshint.reporter('jshint-stylish'));
 });
 
+gulp.task('style', function(){
+  return gulp.src(['test/*js', 'bin/*.js'])
+             .pipe(jscs());
+});
+
 gulp.task('watch', function(){
-  return gulp.watch(['test/*js', 'bin/*.js'], ['test', 'lint']);
+  return gulp.watch(['test/*js', 'bin/*.js'], ['test', 'lint', 'style']);
 });
