@@ -2,22 +2,32 @@
 
 This project takes in a bitmap file. Reads it into a buffer and then performs a transform on the buffer. After the transform is complete it writes the stream to a new file.
 
+The project uses 2 modules bufferReader.js and transform.js, tied together by index.js.
+
 ##To Run:
 
 Runs from the command line using:
 node index.js [dir] [flag]
 
-###bufferReader
+###index.js
 
-bufferReader takes in a file directory and flag. It then determines whether the file is a paletted bitmap, or nonpaletted bitmap.
+Index.js is the file that ties everything together. It takes in the command line arguments, builds a new buffer object by calling bufferReader.js.
 
-After deciding which type of file it is dealing with it calls transform.js and depending on the flag performs different transforms on the file.
+It then determines the endianness of the system and adjusts the applicable buffer object values.
 
-Finally it takes the buffer and creates a new file in the same directory with "transformed" added to the file name.
+Finally depending on the buffer object values it alls the applicable transformer methods and saves the transformed buffer as a new file.
 
-###transform
+###bufferReader.js
 
-transform takes in a bit of data and performs a transform on it causing the overall bitmap to change.
+Creates an object that stores all applicable buffer info.
+
+This object also has methods on it to call on transform.js in different ways depending on the transform required and type of file passed in.
+
+The final method on the object writes the buffer to a new file saved in the same directory but with the added info of what transform had been performed on it.
+
+###transform.js
+
+Transform.js takes in a bit of data and performs a transform on it causing the overall bitmap to change. The transform performed depends on the flag passed in on the command line.
 
 ####Flags Available:
 

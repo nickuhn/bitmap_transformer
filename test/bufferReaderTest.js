@@ -5,7 +5,6 @@ var paletteBufferTest = [ 0, 0, 0, 0, 52, 32, 34, 0, 60, 40, 69, 0, 49, 57, 102,
 var inputFlag = 'i';
 var inputDir = '/bitmaps/nonpalettebitmap.bmp';
 
-
 describe('bufferReader', function(){
   before(function(){
     bufferObject = new BufferReader(inputDir, inputFlag, paletteBufferTest);
@@ -23,3 +22,5 @@ describe('bufferReader', function(){
     expect(bufferObject.fileName).to.deep.equal('/bitmaps/nonpalettebitmap');
   });
 });
+
+
